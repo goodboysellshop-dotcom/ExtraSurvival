@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extra Survival - Майнкрафт Сервер 1.18.2</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/images/server-icon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/images/logo.png" alt="Extra Survival Logo" class="logo-img">
+                    <span class="logo-text">Extra Survival</span>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link active">
+                            <i class="fas fa-home nav-icon"></i> Главная</a></li>
+                        <li><a href="rules.html" class="nav-link">
+                            <i class="fas fa-book nav-icon"></i> Правила</a></li>
+                        <li><a href="donate.html" class="nav-link">
+                            <i class="fas fa-gem nav-icon"></i> Донат</a></li>
+                        <li><a href="contacts.html" class="nav-link">
+                            <i class="fab fa-telegram nav-icon"></i> Telegram</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Главный баннер -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Extra Survival</h1>
+                <p class="hero-subtitle">Сервер Minecraft 1.18.2 с выживанием</p>
+                
+                <div class="server-info">
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-server"></i></div>
+                        <h3>IP Адрес</h3>
+                        <p class="server-ip" id="serverIp">Extra_Survival.exaroton.me</p>
+                        <button class="copy-btn" onclick="copyIP()">
+                            <i class="fas fa-copy"></i> Копировать IP
+                        </button>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-users"></i></div>
+                        <h3>Слоты сервера</h3>
+                        <p class="online-count" id="onlineCount">
+                            <i class="fas fa-user"></i> Максимум: 100 игроков
+                        </p>
+                        <p class="info-note">Работает не 24/7</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-gamepad"></i></div>
+                        <h3>Версия</h3>
+                        <p><strong>Minecraft 1.18.2</strong></p>
+                        <p>OptiFine рекомендуется</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Плагины сервера -->
+    <section class="plugins-section">
+        <div class="container">
+            <h2 class="section-title">Плагины на сервере</h2>
+            <div class="plugins-list">
+                <div class="plugin-card">
+                    <h3><i class="fas fa-star"></i> EssentialsX</h3>
+                    <p>Основные команды, телепорты, варпы</p>
+                </div>
+                
+                <div class="plugin-card">
+                    <h3><i class="fas fa-shield-alt"></i> RedProtect</h3>
+                    <p>Защита территории и построек</p>
+                </div>
+                
+                <div class="plugin-card">
+                    <h3><i class="fas fa-chart-bar"></i> StatsSB</h3>
+                    <p>Статистика игроков</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Как подключиться -->
+    <section class="connect-guide">
+        <div class="container">
+            <h2 class="section-title">Как подключиться?</h2>
+            <div class="guide-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Запустите Minecraft</h3>
+                        <p>Версия должна быть <strong>1.18.2</strong></p>
+                        <p>Рекомендуем установить OptiFine</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Добавьте сервер</h3>
+                        <p>В меню выберите "Сетевая игра" → "Добавить сервер"</p>
+                        <div class="server-address">
+                            <strong>Адрес сервера:</strong>
+                            <code>Extra_Survival.exaroton.me</code>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Присоединяйтесь</h3>
+                        <p>Нажмите "Подключиться" и начинайте играть!</p>
+                        <p>На сервере нет команды /rules, правила смотрите на сайте</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Стандартные команды -->
+    <section class="commands-section">
+        <div class="container">
+            <h2 class="section-title">Основные команды</h2>
+            <div class="commands-grid">
+                <div class="command-card">
+                    <h3>/spawn</h3>
+                    <p>Телепорт на спавн</p>
+                </div>
+                
+                <div class="command-card">
+                    <h3>/home</h3>
+                    <p>Телепорт домой</p>
+                </div>
+                
+                <div class="command-card">
+                    <h3>/sethome</h3>
+                    <p>Установить дом</p>
+                </div>
+                
+                <div class="command-card">
+                    <h3>/warp [имя]</h3>
+                    <p>Телепорт к варпу</p>
+                </div>
+                
+                <div class="command-card">
+                    <h3>/tpa [игрок]</h3>
+                    <p>Запрос на телепорт</p>
+                </div>
+                
+                <div class="command-card">
+                    <h3>/msg [игрок]</h3>
+                    <p>Личное сообщение</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="assets/images/logo.png" alt="Extra Survival Logo" class="logo-img">
+                        <span class="logo-text">Extra Survival</span>
+                    </div>
+                    <p>Minecraft сервер 1.18.2</p>
+                    <p>IP: <strong>Extra_Survival.exaroton.me</strong></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Ссылки</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="rules.html">Правила</a></li>
+                        <li><a href="donate.html">Донат</a></li>
+                        <li><a href="contacts.html">Telegram</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>Есть вопросы?</p>
+                    <a href="https://t.me/ExtraSurvival" class="telegram-link" target="_blank">
+                        <i class="fab fa-telegram"></i> Наш Telegram
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Extra Survival Minecraft Server</p>
+                <p>Minecraft является товарным знаком Mojang AB</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenuBtn">×</button>
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="Extra Survival Logo" class="logo-img">
+                <span class="logo-text">Extra Survival</span>
+            </div>
+        </div>
+        <nav class="mobile-nav">
+            <a href="index.html" class="active"><i class="fas fa-home"></i> Главная</a>
+            <a href="rules.html"><i class="fas fa-book"></i> Правила</a>
+            <a href="donate.html"><i class="fas fa-gem"></i> Донат</a>
+            <a href="contacts.html"><i class="fab fa-telegram"></i> Telegram</a>
+        </nav>
+        <div class="mobile-ip">
+            <p>IP сервера:</p>
+            <p class="server-ip">Extra_Survival.exaroton.me</p>
+            <button class="copy-btn" onclick="copyIP()">
+                <i class="fas fa-copy"></i> Копировать
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
